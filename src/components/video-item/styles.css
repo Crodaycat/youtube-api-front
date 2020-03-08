@@ -4,10 +4,26 @@
   flex-shrink: 0;
   border-radius: 0px !important;
   margin: 7px;
+  cursor: pointer;
 }
 
 .video-image {
   width: 215px;
   height: 118px;
   border-radius: 0px;
+}
+
+.video-title {
+  font-size: 0.8rem !important;
+  line-height: 1rem !important;
+  max-height: 2rem !important;
+  overflow: hidden;
+}
+
+.video-channel {
+  color: #a1cb00 !important;
+}
+
+.video-channel:hover {
+  color: #a1cb00 !important;
 }

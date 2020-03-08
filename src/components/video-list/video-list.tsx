@@ -32,7 +32,7 @@ export default function VideoList() {
   }
 
   const videosMenu = videosHook.videos.map(video => (
-    <VideoItem key={video.id.videoId} />
+    <VideoItem key={video.id.videoId} video={video} />
   ));
 
   return (

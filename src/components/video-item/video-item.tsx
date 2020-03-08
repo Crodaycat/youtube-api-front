@@ -6,39 +6,49 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
-//i.ytimg.com/vi/3AKowBTVRxw/hqdefault.jpg?sqp=-oaymwEZCOADEI4CSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBprRGrkc_r0Q8-drJ-IPPAoAUHXA
-export default function VideoItem() {
+import { YouTuBeVideo } from '../../models/youtube-video';
+import { getTextTimeSincePublished } from '../utils/video-uitls';
+import Link from '@material-ui/core/Link';
+
+interface IProps {
+  video: YouTuBeVideo;
+}
+
+export default function VideoItem(props: IProps) {
   return (
     <Card className='video-container'>
       <CardMedia
         className='video-image'
-        image='http://i.ytimg.com/vi/3AKowBTVRxw/hqdefault.jpg?sqp=-oaymwEZCOADEI4CSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLBprRGrkc_r0Q8-drJ-IPPAoAUHXA'
+        image={props.video.snippet.thumbnails.medium.url}
       />
       <CardContent>
         <Typography
-          gutterBottom
-          variant='body1'
-          color='textSecondary'
-          component='p'
-        >
-          Hola mundo
-        </Typography>
-        <Typography
-          className='item-texts-contet'
+          className='video-title'
           gutterBottom
           variant='body2'
           component='p'
         >
-          Titulo del video
+          {props.video.snippet.title}
         </Typography>
+        <Link
+          className='video-channel'
+          href={
+            'https://www.youtube.com/channel/' + props.video.snippet.channelId
+          }
+          target='_blank'
+          rel='noreferrer'
+          variant='body2'
+        >
+          {props.video.snippet.channelTitle}
+        </Link>
+
         <Typography
-          className='item-texts-contet'
           gutterBottom
           variant='body2'
           color='textSecondary'
           component='p'
         >
-          Otro texto
+          {getTextTimeSincePublished(props.video.snippet.publishedAt)}
         </Typography>
       </CardContent>
     </Card>
