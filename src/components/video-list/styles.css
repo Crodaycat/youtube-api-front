@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.videos-container {
+  display: flex;
+  overflow-x: hidden;
+  width: 100%;
+  height: 250px;
+}
