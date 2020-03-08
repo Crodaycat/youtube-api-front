@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.nav-bar {
+  height: 75px;
+  background-color: #333333;
+  color: #1abc9c;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  justify-content: space-between;
+  min-width: 375px;
+}
+
+.nav-logo {
+  display: block;
+  height: 55px;
+}
+
+.app-name {
+  font-size: 30px;
+  display: none;
+  visibility: hidden;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+@media (min-width: 768px) {
+  .app-name {
+    display: inline-block;
+    visibility: visible;
+  }
+}
+
+.search-input {
+  border-radius: 5px;
+  background-color: white;
+}
+
+.container-icon {
+  cursor: pointer;
+  height: 100%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
