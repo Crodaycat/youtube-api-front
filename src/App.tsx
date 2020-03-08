@@ -1,8 +1,10 @@
-import React from 'react';
 import './App.css';
-import NavBar from './components/nav-bar/nav-bar';
 
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import React from 'react';
+
+import { AppProvider } from './components/app-context/app-context';
+import NavBar from './components/nav-bar/nav-bar';
 import VideoList from './components/video-list/video-list';
 
 const outerTheme = createMuiTheme({
@@ -19,10 +21,12 @@ const outerTheme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={outerTheme}>
-      <div className='App'>
-        <NavBar />
-        <VideoList />
-      </div>
+      <AppProvider>
+        <div className='App'>
+          <NavBar />
+          <VideoList />
+        </div>
+      </AppProvider>
     </ThemeProvider>
   );
 }
