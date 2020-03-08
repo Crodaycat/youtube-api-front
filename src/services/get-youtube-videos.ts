@@ -4,7 +4,8 @@ export default function getYoutubeVideo(searchWord: string) {
   return axios.get('/search', {
     params: {
       q: searchWord,
-      part: 'snippet'
+      part: 'snippet',
+      type: 'video'
     }
   });
 }
