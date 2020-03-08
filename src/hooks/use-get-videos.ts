@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import getYouTuBeVideos from '../services/get-youtube-videos';
+import { YouTuBeVideo } from '../models/youtube-video';
 
-export function useGetVideos() {
+export function useGetVideos(): useGetVideosType {
   const [status, setStatus] = useState<
     'iddle' | 'loading' | 'success' | 'error'
   >('iddle');
-  const [videos, setVideos] = useState([]);
-  const [error, setError] = useState();
+  const [videos, setVideos] = useState<YouTuBeVideo[]>([]);
+  const [error, setError] = useState<string>('');
 
   function fetchVideos(searchWord: string) {
     setStatus('loading');
@@ -27,5 +28,12 @@ export function useGetVideos() {
       });
   }
 
-  return { videos, setVideos, status, error, fetchVideos };
+  return { videos, status, error, fetchVideos };
+}
+
+export interface useGetVideosType {
+  videos: YouTuBeVideo[];
+  status: 'iddle' | 'loading' | 'success' | 'error';
+  error: string;
+  fetchVideos: (searchWord: string) => void;
 }
