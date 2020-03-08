@@ -5,7 +5,8 @@ export default function getYoutubeVideo(searchWord: string) {
     params: {
       q: searchWord,
       part: 'snippet',
-      type: 'video'
+      type: 'video',
+      maxResults: 6
     }
   });
 }

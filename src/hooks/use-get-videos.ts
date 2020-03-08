@@ -21,7 +21,7 @@ export function useGetVideos(): useGetVideosType {
         if (err.response.status === 404) {
           setError('Endpoint no encontrado');
         } else {
-          setError(err.response.error.errors.message);
+          setError(err.response.data.error.message);
         }
 
         setStatus('error');
