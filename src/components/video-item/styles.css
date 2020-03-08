@@ -1,0 +1,13 @@
+.video-container {
+  width: 215px;
+  height: 230px;
+  flex-shrink: 0;
+  border-radius: 0px !important;
+  margin: 7px;
+}
+
+.video-image {
+  width: 215px;
+  height: 118px;
+  border-radius: 0px;
+}
