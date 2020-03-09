@@ -35,10 +35,21 @@ export default function VideoList() {
     <VideoItem key={video.id.videoId} video={video} />
   ));
 
+  function selectVideo(key: string | number | null) {
+    const index = appContext?.videosHook.videos.findIndex(
+      video => video.id.videoId === key
+    );
+
+    if (index !== undefined && index !== -1) {
+      appContext?.setSelectedVideo(appContext?.videosHook.videos[index]);
+    }
+  }
+
   return (
     <div>
       <ScrollMenu
         data={videosMenu}
+        onSelect={selectVideo}
         arrowLeft={
           <IconButton
             color='primary'
