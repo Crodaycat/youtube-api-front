@@ -7,7 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import React from 'react';
 
 import { YouTuBeVideo } from '../../models/youtube-video';
-import { getTextTimeSincePublished } from '../utils/video-uitls';
+import { getTextTimeSincePublished } from '../../utils/video-uitls';
 import Link from '@material-ui/core/Link';
 
 interface IProps {
