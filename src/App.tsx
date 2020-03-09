@@ -11,6 +11,9 @@ const outerTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#1abc9c'
+    },
+    secondary: {
+      main: '#a1cb00'
     }
   },
   typography: {
