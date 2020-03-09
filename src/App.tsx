@@ -6,6 +6,7 @@ import React from 'react';
 import { AppProvider } from './components/app-context/app-context';
 import NavBar from './components/nav-bar/nav-bar';
 import VideoList from './components/video-list/video-list';
+import VideoDetail from './components/video-detail/video-detail';
 
 const outerTheme = createMuiTheme({
   palette: {
@@ -28,6 +29,7 @@ function App() {
         <div className='App'>
           <NavBar />
           <VideoList />
+          <VideoDetail />
         </div>
       </AppProvider>
     </ThemeProvider>

@@ -1,0 +1,38 @@
+.video-detail-main-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 20px auto;
+}
+
+.video-detail-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 25px;
+  height: 0;
+}
+
+.video-detail-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.video-detail-info {
+  padding: 10px;
+  background-color: #333;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .video-detail-main-container {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
+  .video-detail-main-container {
+    grid-template-columns: 2fr 1fr;
+  }
+}
