@@ -26,10 +26,9 @@ export default function VideoItem(props: IProps) {
           className='video-title'
           gutterBottom
           variant='body2'
-          component='p'
-        >
-          {props.video.snippet.title}
-        </Typography>
+          component='div'
+          dangerouslySetInnerHTML={{ __html: props.video.snippet.title }}
+        />
         <Link
           className='video-channel'
           href={
